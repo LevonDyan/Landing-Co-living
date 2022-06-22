@@ -1,0 +1,222 @@
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 90px;
+	z-index: 50;
+
+
+	&__contiainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		justify-self: end;
+		min-height: 50px;
+		color: #FFFFFF;
+		padding: 37px 10px 0 10px;
+
+		@media (max-width: 1075px) {
+			padding: 19px 10px 0 10px;
+		}
+
+	}
+
+	&__home-btn {
+		padding: 16px 20px;
+		margin-right: 10px;
+		border: 1px solid #ffffff33;
+		border-radius: 2px;
+		font-family: Heebo;
+		font-style: normal;
+		font-weight: bold;
+		line-height: 112%;
+
+		&:hover {
+			border: 1px solid #ffffff;
+			box-shadow: #f3eaeab5 0px 0px 5px;
+		}
+
+		@media (max-width: 425px) {
+			font-size: 11px;
+			padding: 16px 5px;
+		}
+	}
+
+	&__booking-btn {
+		padding: 16px 40px;
+		border: 0.5px solid #ffffff33;
+		border-radius: 2px;
+		font-family: Heebo;
+		font-style: normal;
+		font-weight: bold;
+		line-height: 112%;
+
+		&:hover {
+			border: 1px solid #ffffff;
+			box-shadow: #f3eaeab5 0px 0px 5px;
+		}
+
+		@media (max-width: 425px) {
+			font-size: 11px;
+			padding: 16px 5px;
+		}
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+	}
+
+	&__lang {
+		display: flex;
+		align-items: center;
+		margin-right: 40px;
+	}
+
+}
+
+.menu {
+
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin-right: 40px;
+	}
+
+	&__link {
+		font-family: Heebo;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 170%;
+
+		&:hover {
+			font-weight: 500;
+		}
+	}
+}
+
+.lang {
+
+	&__flag-isr {
+		margin-right: 10px;
+	}
+}
+
+.menu-burger-icon {
+	display: none;
+}
+
+// Tablet breakpoint_________________________________________________
+
+@media (max-width: 769px) {
+
+	.header {
+
+		&__right {
+			margin-right: 10px;
+		}
+	}
+
+	.menu {
+		position: absolute;
+		top: 0px;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		padding: 90px 0 15px 10px;
+		background-color: #000000cc;
+		transform: translate(-100%);
+
+		&__contiainer {
+			overflow: auto;
+			height: 100%;
+		}
+
+		&__list {
+			flex-direction: column;
+			flex-wrap: nowrap;
+		}
+
+		&__item {
+			margin: 0 0 10px 0;
+		}
+	}
+
+	.menu__container {
+		overflow: auto;
+		height: 100%;
+	}
+
+	.menu._active {
+		transform: translate(0px);
+	}
+
+	.menu-burger-icon {
+		z-index: 100;
+		display: block;
+		position: relative;
+		width: 52px;
+		height: 42px;
+		cursor: pointer;
+
+		span,
+		&::before,
+		&::after {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 10%;
+			transition: all 0.3s ease 0s;
+			background-color: #fff;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: 50%;
+			transform: scale(1) translate(0px, -50%);
+		}
+	}
+
+	.menu-burger-icon._active {
+		span {
+			transform: scale(0) translate(0px, -50%);
+		}
+
+		&::before {
+			top: 50%;
+			transform: rotate(-45deg) translate(0px, -50%);
+		}
+
+		&::after {
+			bottom: 50%;
+			transform: rotate(45deg) translate(0px, 50%);
+		}
+
+	}
+}
+
+.fixed {
+	background: linear-gradient(93.12deg, #BEA387 0%, #D2B79B 52.4%, #BEA387 100%);
+	height: 70px;
+	justify-content: center;
+	align-items: end;
+	transition: all 1s ease;
+}
